@@ -2,5 +2,927 @@
 <c2eventsheet>
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Event sheet 1</name>
-    <events />
+    <events>
+        <event-block sid="646898130188128">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="253142645722137" type="System" />
+            </conditions>
+            <actions>
+                <action id="-4" name="Set position to another object" sid="748165609937001" type="wieza1">
+                    <param id="0" name="Object">czolg1</param>
+                    <param id="1" name="Image point (optional)">0</param>
+                </action>
+                <action id="-4" name="Set position to another object" sid="804830098489913" type="wieza2">
+                    <param id="0" name="Object">czolg2</param>
+                    <param id="1" name="Image point (optional)">0</param>
+                </action>
+                <action id="-3" name="Set position" sid="397159097096389" type="kamera">
+                    <param id="0" name="X">(czolg1.X + czolg2.X)/2</param>
+                    <param id="1" name="Y">(czolg1.Y + czolg2.Y)/2</param>
+                </action>
+                <action id="-28" name="Set canvas size" sid="847228638927700" type="System">
+                    <param id="0" name="Width">abs(czolg1.X-czolg2.X) + 300</param>
+                    <param id="1" name="Height">abs(czolg1.y-czolg2.Y) + 300</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="335676583731937" title="czolg1">
+            <sub-events>
+                <event-block sid="320018849607586">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="169684031281973" type="Keyboard">
+                            <param id="0" name="Key">191 (/)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-18" name="Rotate clockwise" sid="553580901954801" type="wieza1">
+                            <param id="0" name="Degrees">3</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="480033669741938">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="161776720329884" type="Keyboard">
+                            <param id="0" name="Key">188 (,)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-19" name="Rotate counter-clockwise" sid="853285800799210" type="wieza1">
+                            <param id="0" name="Degrees">3</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="434429126585725">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="419127176482252" type="Keyboard">
+                            <param id="0" name="Key">190 (.)</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="900484436334723" type="wieza1">
+                            <param id="0" name="Instance variable">reload</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="215275141477351" type="wieza1">
+                            <param id="0" name="Object">Sprite3</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="Image point">1</param>
+                        </action>
+                        <action id="-8" name="Set angle" sid="947397404083608" type="Sprite3">
+                            <param id="0" name="Angle">wieza1.Angle</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="886162218346482" type="wieza1">
+                            <param id="0" name="Instance variable">reload</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="0" name="Play" sid="419505408363580" type="Audio">
+                            <param id="0" name="Audio file">strzał</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="382505676743229">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="479941850595124" type="System">
+                            <param id="0" name="Interval (seconds)">1.0</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="742884380782431" type="wieza1">
+                            <param id="0" name="Instance variable">reload</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Add to" sid="396244385238911" type="wieza1">
+                            <param id="0" name="Instance variable">reload</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="625975666930093">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="894668968149668" type="Keyboard">
+                            <param id="0" name="Key">97 (Num 1)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Car" id="7" name="Simulate control" sid="505466225339452" type="czolg1">
+                            <param id="0" name="Control">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="970760029223439">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="946572775586225" type="Keyboard">
+                            <param id="0" name="Key">99 (Num 3)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Car" id="7" name="Simulate control" sid="412162794638611" type="czolg1">
+                            <param id="0" name="Control">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="602451831505761">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="630943678226289" type="Keyboard">
+                            <param id="0" name="Key">101 (Num 5)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Car" id="7" name="Simulate control" sid="835166625420653" type="czolg1">
+                            <param id="0" name="Control">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="191615771465679">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="548970580462863" type="Keyboard">
+                            <param id="0" name="Key">98 (Num 2)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Car" id="7" name="Simulate control" sid="843298635676888" type="czolg1">
+                            <param id="0" name="Control">3</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="882166308823354">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="935854877412649" type="czolg1">
+                            <param id="0" name="Object">droga</param>
+                        </condition>
+                        <condition id="1" name="Is overlapping another object" sid="569638690791302" type="czolg1">
+                            <param id="0" name="Object">zakret</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Car" id="4" name="Set max speed" sid="966016158051533" type="czolg1">
+                            <param id="0" name="Max Speed">150</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="445882524611280">
+                    <conditions>
+                        <condition id="1" inverted="1" name="Is overlapping another object" sid="115400446734394" type="czolg1">
+                            <param id="0" name="Object">droga</param>
+                        </condition>
+                        <condition id="1" inverted="1" name="Is overlapping another object" sid="424101840300748" type="czolg1">
+                            <param id="0" name="Object">zakret</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Car" id="4" name="Set max speed" sid="817115788198054" type="czolg1">
+                            <param id="0" name="Max Speed">75</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="858129903892906" title="czolg2">
+            <sub-events>
+                <event-block sid="680376258923066">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="162801443059164" type="Keyboard">
+                            <param id="0" name="Key">66 (B)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-18" name="Rotate clockwise" sid="881254913394619" type="wieza2">
+                            <param id="0" name="Degrees">3</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="291561530915692">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="826536964097334" type="Keyboard">
+                            <param id="0" name="Key">67 (C)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-19" name="Rotate counter-clockwise" sid="292151235045786" type="wieza2">
+                            <param id="0" name="Degrees">3</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="737220301755447">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="217896682800523" type="Keyboard">
+                            <param id="0" name="Key">86 (V)</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="814283139819515" type="wieza2">
+                            <param id="0" name="Instance variable">reload</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="930642163982662" type="wieza2">
+                            <param id="0" name="Object">Sprite3</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="Image point">1</param>
+                        </action>
+                        <action id="-8" name="Set angle" sid="800638651690335" type="Sprite3">
+                            <param id="0" name="Angle">wieza2.Angle</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="747031656897017" type="wieza2">
+                            <param id="0" name="Instance variable">reload</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="0" name="Play" sid="311957136987322" type="Audio">
+                            <param id="0" name="Audio file">strzał</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="326738463759173">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="683516823551670" type="System">
+                            <param id="0" name="Interval (seconds)">1.0</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="328019725107094" type="wieza2">
+                            <param id="0" name="Instance variable">reload</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Add to" sid="573383133311797" type="wieza2">
+                            <param id="0" name="Instance variable">reload</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="589078811092708">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="908818147803434" type="Keyboard">
+                            <param id="0" name="Key">65 (A)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Car" id="7" name="Simulate control" sid="773343036283094" type="czolg2">
+                            <param id="0" name="Control">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="662461351956604">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="419098559950820" type="Keyboard">
+                            <param id="0" name="Key">68 (D)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Car" id="7" name="Simulate control" sid="671433148161436" type="czolg2">
+                            <param id="0" name="Control">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="347101341750069">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="130972892872951" type="Keyboard">
+                            <param id="0" name="Key">87 (W)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Car" id="7" name="Simulate control" sid="131682260796208" type="czolg2">
+                            <param id="0" name="Control">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="588894287494090">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="914938803231042" type="Keyboard">
+                            <param id="0" name="Key">83 (S)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Car" id="7" name="Simulate control" sid="864110797336685" type="czolg2">
+                            <param id="0" name="Control">3</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="800645843462507">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="467087819207998" type="czolg2">
+                            <param id="0" name="Object">droga</param>
+                        </condition>
+                        <condition id="1" name="Is overlapping another object" sid="674056480952156" type="czolg2">
+                            <param id="0" name="Object">zakret</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Car" id="4" name="Set max speed" sid="914115243504205" type="czolg2">
+                            <param id="0" name="Max Speed">150</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="191320932365262">
+                    <conditions>
+                        <condition id="1" inverted="1" name="Is overlapping another object" sid="114717440186007" type="czolg2">
+                            <param id="0" name="Object">droga</param>
+                        </condition>
+                        <condition id="1" inverted="1" name="Is overlapping another object" sid="492257771717192" type="czolg2">
+                            <param id="0" name="Object">zakret</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Car" id="4" name="Set max speed" sid="762811715896771" type="czolg2">
+                            <param id="0" name="Max Speed">75</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block any="1" sid="254838101230782">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="791586644167358" type="Sprite3">
+                    <param id="0" name="Object">Sprite6</param>
+                </condition>
+                <condition id="0" name="On collision with another object" sid="757050017994023" type="Sprite3">
+                    <param id="0" name="Object">Sprite7</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="630406213618317" type="Sprite3" />
+                <action id="0" name="Play" sid="318340528415524" type="Audio">
+                    <param id="0" name="Audio file">Explosion sound effect</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="728095287388705">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="860554664288695" type="Sprite3">
+                    <param id="0" name="Object">Sprite5</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="851489513112257" type="Sprite3" />
+                <action id="-9" name="Destroy" sid="872795545714887" type="Sprite5" />
+                <action id="0" name="Play" sid="381699934771961" type="Audio">
+                    <param id="0" name="Audio file">Explosion sound effect</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="512610709660271">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="736275590044500" type="System">
+                    <param id="0" name="Interval (seconds)">6</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="540868657684595" type="System">
+                    <param id="0" name="Object to create">Sprite5</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">1000</param>
+                    <param id="3" name="Y">338</param>
+                </action>
+                <action id="-8" name="Set angle" sid="810567506087057" type="Sprite5">
+                    <param id="0" name="Angle">90</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="611599638008646">
+            <conditions>
+                <condition id="-2" name="Compare Y" sid="645027017784711" type="Sprite5">
+                    <param id="0" name="Comparison">4</param>
+                    <param id="1" name="Y co-ordinate">521</param>
+                </condition>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="634003404125806" type="Sprite5">
+                    <param id="0" name="Instance variable">z1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-8" name="Set angle" sid="567898261616829" type="Sprite5">
+                    <param id="0" name="Angle">180</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="723831129669910" type="Sprite5">
+                    <param id="0" name="Instance variable">z1</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="987296173880988" type="Sprite5">
+                    <param id="0" name="Instance variable">z2</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="815085514742377">
+            <conditions>
+                <condition id="-1" name="Compare X" sid="650770122731760" type="Sprite5">
+                    <param id="0" name="Comparison">2</param>
+                    <param id="1" name="X co-ordinate">600</param>
+                </condition>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="338626934840972" type="Sprite5">
+                    <param id="0" name="Instance variable">z2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-8" name="Set angle" sid="431838757274797" type="Sprite5">
+                    <param id="0" name="Angle">90</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="529664574309515" type="Sprite5">
+                    <param id="0" name="Instance variable">z2</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="177788901738353" type="Sprite5">
+                    <param id="0" name="Instance variable">z3</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="382955924453388">
+            <conditions>
+                <condition id="-2" name="Compare Y" sid="602723579821505" type="Sprite5">
+                    <param id="0" name="Comparison">4</param>
+                    <param id="1" name="Y co-ordinate">720</param>
+                </condition>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="689537750665423" type="Sprite5">
+                    <param id="0" name="Instance variable">z3</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-8" name="Set angle" sid="634123669670166" type="Sprite5">
+                    <param id="0" name="Angle">0</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="674897502735817" type="Sprite5">
+                    <param id="0" name="Instance variable">z3</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="192633706555768" type="Sprite5">
+                    <param id="0" name="Instance variable">z4</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="974580827606617">
+            <conditions>
+                <condition id="-1" name="Compare X" sid="866089608533569" type="Sprite5">
+                    <param id="0" name="Comparison">4</param>
+                    <param id="1" name="X co-ordinate">1280</param>
+                </condition>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="331761153314676" type="Sprite5">
+                    <param id="0" name="Instance variable">z4</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-8" name="Set angle" sid="557131602373404" type="Sprite5">
+                    <param id="0" name="Angle">90</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="990691497715026" type="Sprite5">
+                    <param id="0" name="Instance variable">z4</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="895154152962539" type="Sprite5">
+                    <param id="0" name="Instance variable">z5</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="282222617826644">
+            <conditions>
+                <condition id="-2" name="Compare Y" sid="517855059809285" type="Sprite5">
+                    <param id="0" name="Comparison">4</param>
+                    <param id="1" name="Y co-ordinate">1020</param>
+                </condition>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="568528583694639" type="Sprite5">
+                    <param id="0" name="Instance variable">z5</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-8" name="Set angle" sid="190976082501806" type="Sprite5">
+                    <param id="0" name="Angle">180</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="593150996864674" type="Sprite5">
+                    <param id="0" name="Instance variable">z5</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="724555415436894" type="Sprite5">
+                    <param id="0" name="Instance variable">z6</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="521246308256748">
+            <conditions>
+                <condition id="-1" name="Compare X" sid="100050609392432" type="Sprite5">
+                    <param id="0" name="Comparison">2</param>
+                    <param id="1" name="X co-ordinate">144</param>
+                </condition>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="488827852561517" type="Sprite5">
+                    <param id="0" name="Instance variable">z6</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-8" name="Set angle" sid="307130717474176" type="Sprite5">
+                    <param id="0" name="Angle">90</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="947377975178962" type="Sprite5">
+                    <param id="0" name="Instance variable">z6</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="358327676820155" type="Sprite5">
+                    <param id="0" name="Instance variable">z7</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="420449889617173">
+            <conditions>
+                <condition id="-2" name="Compare Y" sid="558658882184129" type="Sprite5">
+                    <param id="0" name="Comparison">4</param>
+                    <param id="1" name="Y co-ordinate">1233</param>
+                </condition>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="136059115107553" type="Sprite5">
+                    <param id="0" name="Instance variable">z7</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-8" name="Set angle" sid="876008107927673" type="Sprite5">
+                    <param id="0" name="Angle">0</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="144846511357856" type="Sprite5">
+                    <param id="0" name="Instance variable">z7</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="886861011431242" type="Sprite5">
+                    <param id="0" name="Instance variable">z8</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="516695037372220">
+            <conditions>
+                <condition id="-1" name="Compare X" sid="957970403787499" type="Sprite5">
+                    <param id="0" name="Comparison">4</param>
+                    <param id="1" name="X co-ordinate">476</param>
+                </condition>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="105331433015043" type="Sprite5">
+                    <param id="0" name="Instance variable">z8</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-8" name="Set angle" sid="231705368661963" type="Sprite5">
+                    <param id="0" name="Angle">90</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="425372200690313" type="Sprite5">
+                    <param id="0" name="Instance variable">z8</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="209136624635226" type="Sprite5">
+                    <param id="0" name="Instance variable">z9</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="705466806184436">
+            <conditions>
+                <condition id="-2" name="Compare Y" sid="539460336346422" type="Sprite5">
+                    <param id="0" name="Comparison">4</param>
+                    <param id="1" name="Y co-ordinate">1410</param>
+                </condition>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="467532993925594" type="Sprite5">
+                    <param id="0" name="Instance variable">z9</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-8" name="Set angle" sid="635196415850585" type="Sprite5">
+                    <param id="0" name="Angle">0</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="730652858426003" type="Sprite5">
+                    <param id="0" name="Instance variable">z9</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="505030202103444" type="Sprite5">
+                    <param id="0" name="Instance variable">z10</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="851373961493606">
+            <conditions>
+                <condition id="-1" name="Compare X" sid="770588023858018" type="Sprite5">
+                    <param id="0" name="Comparison">4</param>
+                    <param id="1" name="X co-ordinate">922</param>
+                </condition>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="116165049506392" type="Sprite5">
+                    <param id="0" name="Instance variable">z10</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-8" name="Set angle" sid="275551563600749" type="Sprite5">
+                    <param id="0" name="Angle">270</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="897410841217288" type="Sprite5">
+                    <param id="0" name="Instance variable">z10</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="480106283533879" type="Sprite5">
+                    <param id="0" name="Instance variable">z11</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="368437940572940">
+            <conditions>
+                <condition id="-2" name="Compare Y" sid="344420538348833" type="Sprite5">
+                    <param id="0" name="Comparison">2</param>
+                    <param id="1" name="Y co-ordinate">1265</param>
+                </condition>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="679268784419208" type="Sprite5">
+                    <param id="0" name="Instance variable">z11</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-8" name="Set angle" sid="293318113424959" type="Sprite5">
+                    <param id="0" name="Angle">0</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="352059774095089" type="Sprite5">
+                    <param id="0" name="Instance variable">z11</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="910620412582441" type="Sprite5">
+                    <param id="0" name="Instance variable">z12</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="481128013665466">
+            <conditions>
+                <condition id="-1" name="Compare X" sid="784777222206726" type="Sprite5">
+                    <param id="0" name="Comparison">4</param>
+                    <param id="1" name="X co-ordinate">1288</param>
+                </condition>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="379088578517149" type="Sprite5">
+                    <param id="0" name="Instance variable">z12</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-8" name="Set angle" sid="549943461722260" type="Sprite5">
+                    <param id="0" name="Angle">90</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="622656657857900" type="Sprite5">
+                    <param id="0" name="Instance variable">z12</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="213712566484675" type="Sprite5">
+                    <param id="0" name="Instance variable">z13</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="613450707316660">
+            <conditions>
+                <condition id="-2" name="Compare Y" sid="853488748982914" type="Sprite5">
+                    <param id="0" name="Comparison">4</param>
+                    <param id="1" name="Y co-ordinate">1496</param>
+                </condition>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="563697556870500" type="Sprite5">
+                    <param id="0" name="Instance variable">z13</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-8" name="Set angle" sid="901105850272433" type="Sprite5">
+                    <param id="0" name="Angle">0</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="836930557226438" type="Sprite5">
+                    <param id="0" name="Instance variable">z13</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="148206281560891" type="Sprite5">
+                    <param id="0" name="Instance variable">z14</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="462925490683225">
+            <conditions>
+                <condition id="-1" name="Compare X" sid="375429574067788" type="Sprite5">
+                    <param id="0" name="Comparison">4</param>
+                    <param id="1" name="X co-ordinate">1435</param>
+                </condition>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="452300387370323" type="Sprite5">
+                    <param id="0" name="Instance variable">z14</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-8" name="Set angle" sid="530350289215629" type="Sprite5">
+                    <param id="0" name="Angle">90</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="772987796367198" type="Sprite5">
+                    <param id="0" name="Instance variable">z14</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="230810745783051" type="Sprite5">
+                    <param id="0" name="Instance variable">z15</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="314948552824333">
+            <conditions>
+                <condition id="-2" name="Compare Y" sid="758544235922751" type="Sprite5">
+                    <param id="0" name="Comparison">4</param>
+                    <param id="1" name="Y co-ordinate">1747</param>
+                </condition>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="524711157460449" type="Sprite5">
+                    <param id="0" name="Instance variable">z15</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-8" name="Set angle" sid="721516924656182" type="Sprite5">
+                    <param id="0" name="Angle">180</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="315844802750003" type="Sprite5">
+                    <param id="0" name="Instance variable">z15</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="639610004002820" type="Sprite5">
+                    <param id="0" name="Instance variable">z16</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="428570188482380">
+            <conditions>
+                <condition id="-1" name="Compare X" sid="222288991711812" type="Sprite5">
+                    <param id="0" name="Comparison">2</param>
+                    <param id="1" name="X co-ordinate">1080</param>
+                </condition>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="279525455441325" type="Sprite5">
+                    <param id="0" name="Instance variable">z16</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-8" name="Set angle" sid="161367599474535" type="Sprite5">
+                    <param id="0" name="Angle">90</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="695995327343712" type="Sprite5">
+                    <param id="0" name="Instance variable">z16</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="244518229932122" type="Sprite5">
+                    <param id="0" name="Instance variable">z17</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="912896865466802">
+            <conditions>
+                <condition id="-2" name="Compare Y" sid="423116221573204" type="Sprite5">
+                    <param id="0" name="Comparison">4</param>
+                    <param id="1" name="Y co-ordinate">1900</param>
+                </condition>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="282953216714038" type="Sprite5">
+                    <param id="0" name="Instance variable">z17</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-8" name="Set angle" sid="362183441987583" type="Sprite5">
+                    <param id="0" name="Angle">180</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="662522451591609" type="Sprite5">
+                    <param id="0" name="Instance variable">z17</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="691154190601156" type="Sprite5">
+                    <param id="0" name="Instance variable">z18</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="521674965428091">
+            <conditions>
+                <condition id="-1" name="Compare X" sid="105041872331840" type="Sprite5">
+                    <param id="0" name="Comparison">2</param>
+                    <param id="1" name="X co-ordinate">480</param>
+                </condition>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="775343626334392" type="Sprite5">
+                    <param id="0" name="Instance variable">z18</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-8" name="Set angle" sid="890557279478945" type="Sprite5">
+                    <param id="0" name="Angle">270</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="769088385943233" type="Sprite5">
+                    <param id="0" name="Instance variable">z18</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="544124880776246" type="Sprite5">
+                    <param id="0" name="Instance variable">z19</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="379421710362771">
+            <conditions>
+                <condition id="-2" name="Compare Y" sid="906123415574160" type="Sprite5">
+                    <param id="0" name="Comparison">2</param>
+                    <param id="1" name="Y co-ordinate">1720</param>
+                </condition>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="848891391619076" type="Sprite5">
+                    <param id="0" name="Instance variable">z19</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-8" name="Set angle" sid="551142232204148" type="Sprite5">
+                    <param id="0" name="Angle">180</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="207466235728173" type="Sprite5">
+                    <param id="0" name="Instance variable">z19</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="490678833644245" type="Sprite5">
+                    <param id="0" name="Instance variable">z20</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="111717309478003">
+            <conditions>
+                <condition id="-1" name="Compare X" sid="504422818196944" type="Sprite5">
+                    <param id="0" name="Comparison">2</param>
+                    <param id="1" name="X co-ordinate">153</param>
+                </condition>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="643513682599903" type="Sprite5">
+                    <param id="0" name="Instance variable">z20</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-8" name="Set angle" sid="687637541998202" type="Sprite5">
+                    <param id="0" name="Angle">90</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="300461877210776" type="Sprite5">
+                    <param id="0" name="Instance variable">z20</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block any="1" sid="675784243981742">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="566290448405033" type="Sprite5">
+                    <param id="0" name="Object">czolg1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="111294251702317" type="Sprite5" />
+                <action behavior="Car" id="0" name="Stop" sid="715260469921868" type="czolg1" />
+            </actions>
+        </event-block>
+        <event-block any="1" sid="668372372097164">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="432676274683860" type="Sprite5">
+                    <param id="0" name="Object">czolg2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="173293658749909" type="Sprite5" />
+                <action behavior="Car" id="0" name="Stop" sid="843382914648052" type="czolg2" />
+            </actions>
+        </event-block>
+        <event-block sid="656348818064961">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="479895800522555" type="czolg1">
+                    <param id="0" name="Object">Sprite3</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="348289604536542" type="Sprite3" />
+                <action id="0" name="Play" sid="711689458472489" type="Audio">
+                    <param id="0" name="Audio file">Explosion sound effect</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action behavior="Car" id="0" name="Stop" sid="924117286382583" type="czolg1" />
+            </actions>
+        </event-block>
+        <event-block sid="690701634238273">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="197867453124737" type="czolg2">
+                    <param id="0" name="Object">Sprite3</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="582386987946255" type="Sprite3" />
+                <action id="0" name="Play" sid="645136267301404" type="Audio">
+                    <param id="0" name="Audio file">Explosion sound effect</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action behavior="Car" id="0" name="Stop" sid="727312692404645" type="czolg2" />
+            </actions>
+        </event-block>
+    </events>
 </c2eventsheet>
